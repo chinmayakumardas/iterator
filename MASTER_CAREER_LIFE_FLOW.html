@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🚀 Master Career + Life Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --surface: #121826;
+      --surface-2: #1a2332;
+      --border: #2a3548;
+      --text: #e8eef7;
+      --text-muted: #94a3b8;
+      --accent: #6366f1;
+      --accent-2: #22d3ee;
+      --accent-3: #a78bfa;
+      --green: #34d399;
+      --orange: #fb923c;
+      --pink: #f472b6;
+      --yellow: #fbbf24;
+      --red: #f87171;
+      --gradient: linear-gradient(135deg, #6366f1, #22d3ee, #a78bfa);
+      --gradient-soft: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(34,211,238,0.1));
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(99,102,241,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 100%, rgba(34,211,238,0.08) 0%, transparent 50%);
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 64px;
+      padding: 48px 32px;
+      background: var(--gradient-soft);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 60%);
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(99,102,241,0.2);
+      color: #a5b4fc;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid rgba(99,102,241,0.3);
+    }
+
+    /* Flow diagram */
+    .flow-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      margin: 32px 0;
+      overflow-x: auto;
+      box-shadow: var(--shadow);
+    }
+
+    .flow-box pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: #c4b5fd;
+      white-space: pre;
+      margin: 0;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 48px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      background: var(--gradient);
+      color: white;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #c4b5fd;
+      margin: 24px 0 12px;
+    }
+
+    p, li {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin: 12px 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    li strong {
+      color: var(--text);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 16px 0;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(99,102,241,0.5);
+      transform: translateY(-2px);
+    }
+
+    .card.highlight {
+      border-color: rgba(34,211,238,0.4);
+      background: linear-gradient(135deg, rgba(34,211,238,0.06), rgba(99,102,241,0.04));
+    }
+
+    .card.orange {
+      border-color: rgba(251,146,60,0.35);
+      background: linear-gradient(135deg, rgba(251,146,60,0.06), transparent);
+    }
+
+    .card.green {
+      border-color: rgba(52,211,153,0.35);
+      background: linear-gradient(135deg, rgba(52,211,153,0.06), transparent);
+    }
+
+    .card.pink {
+      border-color: rgba(244,114,182,0.35);
+      background: linear-gradient(135deg, rgba(244,114,182,0.06), transparent);
+    }
+
+    /* Tags / pills */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .tag {
+      background: rgba(99,102,241,0.15);
+      color: #a5b4fc;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(99,102,241,0.25);
+    }
+
+    .tag.cyan { background: rgba(34,211,238,0.12); color: #67e8f9; border-color: rgba(34,211,238,0.25); }
+    .tag.green { background: rgba(52,211,153,0.12); color: #6ee7b7; border-color: rgba(52,211,153,0.25); }
+    .tag.orange { background: rgba(251,146,60,0.12); color: #fdba74; border-color: rgba(251,146,60,0.25); }
+    .tag.pink { background: rgba(244,114,182,0.12); color: #f9a8d4; border-color: rgba(244,114,182,0.25); }
+    .tag.yellow { background: rgba(251,191,36,0.12); color: #fcd34d; border-color: rgba(251,191,36,0.25); }
+
+    /* Arrow list */
+    .arrow-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+
+    .arrow-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .arrow-list li::before {
+      content: '↓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .arrow-list.horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 4px;
+      align-items: center;
+    }
+
+    .arrow-list.horizontal li {
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .arrow-list.horizontal li::before {
+      display: none;
+    }
+
+    .arrow-list.horizontal li:not(:last-child)::after {
+      content: '→';
+      color: var(--accent-2);
+      font-weight: 700;
+      margin-left: 4px;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--surface-2);
+      color: #c4b5fd;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      color: var(--text-muted);
+    }
+
+    tr:hover td {
+      background: rgba(99,102,241,0.05);
+    }
+
+    /* Week cards */
+    .weeks {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .week-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+
+    .week-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(99,102,241,0.15);
+    }
+
+    .week-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-2);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .week-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .week-card li {
+      font-size: 0.88rem;
+      padding: 4px 0;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .week-card li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Scoreboard */
+    .scoreboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .score-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .score-item .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-3);
+      margin-bottom: 8px;
+    }
+
+    .score-item .value {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Quote / rule box */
+    .rule-box {
+      background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(34,211,238,0.1));
+      border: 1px solid rgba(99,102,241,0.4);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    .rule-box p {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .rule-box .sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .rule-box .chain {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #a5b4fc;
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    /* Day schedule */
+    .schedule {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .day-row {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 12px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+
+    .day-row .day {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-2);
+    }
+
+    .day-row .focus {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Questions */
+    .questions {
+      counter-reset: q;
+      list-style: none;
+      padding: 0;
+    }
+
+    .questions li {
+      counter-increment: q;
+      position: relative;
+      padding: 14px 16px 14px 56px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .questions li::before {
+      content: counter(q);
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      background: var(--gradient);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer strong {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container { padding: 32px 16px 60px; }
+      .hero { padding: 32px 20px; }
+      .flow-box pre { font-size: 0.6rem; }
+      .weeks { grid-template-columns: 1fr; }
+      .day-row { grid-template-columns: 56px 1fr; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3d4a63; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="badge">60–90 Day Operating System</div>
+      <h1>🚀 Your Master Career + Life Flow</h1>
+      <p>One loop. Real work. Better you.</p>
+    </header>
+
+    <!-- MAIN FLOW -->
+    <div class="flow-box">
+<pre>
+                         YOU
+                          │
+                          ▼
+                 CURRENT JOB
+                 ~2 YR FRONTEND
+                          │
+                          ▼
+                 60–90 DAY SPRINT
+                          │
+          ┌───────────────┼────────────────┐
+          │               │                │
+          ▼               ▼                ▼
+       JOB SWITCH      FREELANCE        REAL PROJECTS
+        ₹30K+           ₹10–20K             │
+          │               │                 │
+          └───────────────┼─────────────────┘
+                          ▼
+                    REAL PROBLEMS
+                          │
+                          ▼
+                   TARGETED LEARNING
+                          │
+                          ▼
+                     BETTER SKILL
+                          │
+                          ▼
+                       PROOF
+                          │
+              ┌───────────┴───────────┐
+              ▼                       ▼
+          PORTFOLIO               CONTENT
+                                      │
+                              ┌───────┴───────┐
+                              ▼               ▼
+                          LINKEDIN       INSTAGRAM
+                              │               │
+                              └───────┬───────┘
+                                      ▼
+                               PERSONAL BRAND
+                                      │
+                                      ▼
+                              NETWORK / TRUST
+                                      │
+                              ┌───────┴───────┐
+                              ▼               ▼
+                           JOBS          CLIENTS
+                              │               │
+                              └───────┬───────┘
+                                      ▼
+                                  MORE INCOME
+                                      │
+                                      ▼
+                              MORE EXPERIENCE
+                                      │
+                                      ▼
+                               BETTER YOU
+                                      │
+                                      ▼
+                              NEXT LEVEL
+                                      │
+                                      ↺
+</pre>
+    </div>
+
+    <p style="text-align:center;color:var(--text-muted);margin-bottom:48px;font-weight:500;">
+      This is the main loop. Now let's turn it into a real procedure.
+    </p>
+
+    <!-- 1. YOU -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>YOU — Your Current Position</h2>
+      </div>
+      <div class="card">
+        <p>You are <strong style="color:var(--green)">not a beginner</strong>.</p>
+        <p style="margin-top:12px">You currently have ~2 years frontend experience:</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag cyan">Next.js</span>
+          <span class="tag green">TypeScript</span>
+          <span class="tag orange">Production experience</span>
+          <span class="tag pink">Ability to build software</span>
+        </div>
+        <p style="margin-top:16px">Your next level is not simply learning more code. You need to become better at:</p>
+        <ul class="arrow-list">
+          <li>Understand business</li>
+          <li>Plan</li>
+          <li>Design</li>
+          <li>Develop</li>
+          <li>Communicate</li>
+          <li>Deliver</li>
+          <li>Improve</li>
+        </ul>
+        <p>That is what will make you more valuable.</p>
+      </div>
+    </section>
+
+    <!-- 2. SPRINT -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2>60–90 Day Sprint</h2>
+      </div>
+      <div class="card highlight">
+        <p>Three active engines that support each other:</p>
+        <div class="tags" style="margin-top:16px">
+          <span class="tag">JOB · ₹30K+</span>
+          <span class="tag cyan">FREELANCE · ₹10–20K</span>
+          <span class="tag green">REAL PROJECTS</span>
+        </div>
+        <p style="margin-top:16px">Don't think of these as three separate lives. <strong style="color:var(--text)">They support each other.</strong></p>
+      </div>
+    </section>
+
+    <!-- 3. JOB SWITCH -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2>Job Switch — Stability Engine</h2>
+      </div>
+      <div class="card">
+        <p>Your current job remains your base. You don't quit and hope. You use it while preparing for the next opportunity.</p>
+        <h3>Target</h3>
+        <p><strong style="color:var(--green);font-size:1.15rem">₹30k+ frontend role</strong></p>
+        <div class="tags">
+          <span class="tag">Frontend Developer</span>
+          <span class="tag cyan">React Developer</span>
+          <span class="tag green">Next.js Developer</span>
+          <span class="tag orange">Frontend Engineer</span>
+          <span class="tag pink">UI Engineer</span>
+          <span class="tag yellow">Software Engineer — Frontend</span>
+        </div>
+        <h3>Starting Week 2 — Every week</h3>
+        <ul>
+          <li><strong>10–15</strong> quality applications</li>
+          <li><strong>3–5</strong> professional conversations</li>
+          <li><strong>2</strong> interview-preparation sessions</li>
+        </ul>
+        <h3>Track everything</h3>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Contact</th>
+                <th>Follow-up</th>
+                <th>Interview</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card orange" style="margin-top:20px">
+          <p><strong style="color:var(--orange)">Goal</strong></p>
+          <p style="margin-top:8px">Not: <em>"Apply to 500 jobs."</em></p>
+          <p style="margin-top:6px">Instead: <strong style="color:var(--text)">Improve your ability to get and convert opportunities.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FREELANCE -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2>Freelance — Income + Business Engine</h2>
+      </div>
+      <div class="card">
+        <p>Start from <strong style="color:var(--accent-2)">Week 2</strong>.</p>
+        <h3>Your initial service</h3>
+        <p>Modern landing pages and websites for startups, SaaS, agencies and service businesses.</p>
+        <p style="margin-top:8px"><em>Don't start with 20 services. Start focused.</em></p>
+        <h3>Freelance procedure</h3>
+        <div class="flow-box" style="margin:16px 0">
+<pre style="color:#67e8f9;font-size:0.8rem">
+FIND PROSPECT → RESEARCH BUSINESS → CHECK WEBSITE → FIND REAL PROBLEM
+      ↓
+THINK OF IMPROVEMENT → PERSONALIZED OUTREACH → REPLY → CONVERSATION
+      ↓
+DISCOVERY → UNDERSTAND REQUIREMENTS → PROPOSAL → PRICE → AGREEMENT
+      ↓
+PAYMENT → BUILD → TEST → DELIVER → FEEDBACK → TESTIMONIAL → REFERRAL
+</pre>
+        </div>
+        <h3>Initial target</h3>
+        <ul>
+          <li><strong>10 prospects/week</strong> → 15–20/week after you become comfortable</li>
+          <li>First paid project → <strong style="color:var(--green)">₹10k+</strong> → eventually <strong style="color:var(--green)">₹10–20k/month</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. REAL PROJECTS -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>Real Projects — The Center of Everything</h2>
+      </div>
+      <div class="card green">
+        <p>Your projects aren't just portfolio pieces. They are your:</p>
+        <div class="tags" style="margin-top:14px">
+          <span class="tag green">Learning</span>
+          <span class="tag">Portfolio</span>
+          <span class="tag cyan">Content</span>
+          <span class="tag orange">Interview material</span>
+          <span class="tag pink">Freelance proof</span>
+          <span class="tag yellow">Design + Planning practice</span>
+        </div>
+        <p style="margin-top:16px;font-weight:600;color:var(--text)">Therefore: Build real projects, not tutorial clones.</p>
+      </div>
+    </section>
+
+    <!-- 6. PROJECT PROCEDURE -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2>Project Procedure</h2>
+      </div>
+      <div class="card">
+        <p>For every project, follow this:</p>
+        <div class="flow-box" style="margin:16px 0">
+<pre style="color:#a78bfa;font-size:0.78rem">
+BUSINESS → AUDIENCE → PROBLEM → GOAL → CONTENT → UX → WIREFRAME
+     ↓
+VISUAL DESIGN → DESIGN SYSTEM → DEVELOPMENT → RESPONSIVE → MOTION
+     ↓
+ACCESSIBILITY → PERFORMANCE → SEO → TEST → LAUNCH → CASE STUDY
+</pre>
+        </div>
+        <p>This is how you develop the planning ability you currently feel is missing.</p>
+      </div>
+    </section>
+
+    <!-- 7. FIRST PROJECT -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <h2>Your First Project — SaaS Landing Page</h2>
+      </div>
+      <div class="card">
+        <p><strong style="color:var(--orange)">Don't start with VS Code.</strong> First answer:</p>
+        <ul style="margin-top:12px">
+          <li>What does the business sell?</li>
+          <li>Who is the customer?</li>
+          <li>What problem do they have?</li>
+          <li>How does the product solve it?</li>
+          <li>What is the website's goal?</li>
+          <li>What action should the visitor take?</li>
+          <li>Why should they trust the company?</li>
+          <li>What objections might they have?</li>
+        </ul>
+        <h3>Example structure</h3>
+        <div class="tags">
+          <span class="tag">Hero</span>
+          <span class="tag cyan">Problem</span>
+          <span class="tag green">Solution</span>
+          <span class="tag orange">Features</span>
+          <span class="tag pink">How it works</span>
+          <span class="tag yellow">Proof</span>
+          <span class="tag">Pricing</span>
+          <span class="tag cyan">FAQ</span>
+          <span class="tag green">CTA</span>
+        </div>
+        <p style="margin-top:12px;font-size:0.9rem"><em>Not every website needs this exact structure. The business determines the structure.</em></p>
+      </div>
+    </section>
+
+    <!-- 8. SECOND PROJECT -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <h2>Second Project — Agency / Service Website</h2>
+      </div>
+      <div class="card pink">
+        <p><strong>Goal:</strong> Generate enquiries.</p>
+        <p style="margin-top:10px">Practice:</p>
+        <div class="tags">
+          <span class="tag pink">Positioning</span>
+          <span class="tag">Storytelling</span>
+          <span class="tag cyan">Services</span>
+          <span class="tag green">Trust</span>
+          <span class="tag orange">Case studies</span>
+          <span class="tag yellow">Testimonials</span>
+          <span class="tag">CTA + Conversion</span>
+        </div>
+        <p style="margin-top:14px">Now you have two different types of website experience.</p>
+      </div>
+    </section>
+
+    <!-- 9. LEARNING -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">9</div>
+        <h2>Real Problems → Targeted Learning</h2>
+      </div>
+      <div class="card">
+        <p>Don't ask: <em>"What frontend course should I complete?"</em></p>
+        <p style="margin-top:8px">Ask: <strong style="color:var(--accent-2)">"What problem am I facing right now?"</strong></p>
+        <h3>Examples</h3>
+        <div class="card" style="background:var(--surface-2);margin:12px 0">
+          <p><strong style="color:var(--orange)">Problem:</strong> My hero doesn't feel convincing.</p>
+          <p style="margin-top:6px">↓ Learn: Messaging + hierarchy + CTA → Apply → Improve</p>
+        </div>
+        <div class="card" style="background:var(--surface-2);margin:12px 0">
+          <p><strong style="color:var(--orange)">Problem:</strong> My UI looks inconsistent.</p>
+          <p style="margin-top:6px">↓ Learn: Spacing + typography + design tokens → Apply → Improve</p>
+        </div>
+        <div class="card" style="background:var(--surface-2);margin:12px 0">
+          <p><strong style="color:var(--orange)">Problem:</strong> Mobile layout is poor.</p>
+          <p style="margin-top:6px">↓ Learn: Responsive design → Apply → Improve</p>
+        </div>
+        <div class="card" style="background:var(--surface-2);margin:12px 0">
+          <p><strong style="color:var(--orange)">Problem:</strong> Website feels static.</p>
+          <p style="margin-top:6px">↓ Learn: Motion / interaction → Apply → Improve</p>
+        </div>
+        <h3>Learning loop</h3>
+        <ul class="arrow-list">
+          <li>REAL PROBLEM</li>
+          <li>TRY</li>
+          <li>RESEARCH</li>
+          <li>LEARN</li>
+          <li>IMPLEMENT</li>
+          <li>UNDERSTAND</li>
+          <li>DOCUMENT</li>
+          <li>REUSE</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 10. BETTER SKILL -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <h2>Better Skill</h2>
+      </div>
+      <div class="card">
+        <p>Over time your skill stack becomes:</p>
+        <div class="tags" style="margin-top:14px">
+          <span class="tag">Frontend</span>
+          <span class="tag cyan">UI</span>
+          <span class="tag green">UX</span>
+          <span class="tag orange">Planning</span>
+          <span class="tag pink">Business thinking</span>
+          <span class="tag yellow">Communication</span>
+          <span class="tag">Sales</span>
+          <span class="tag cyan">Delivery</span>
+        </div>
+        <p style="margin-top:14px">You don't learn all of this at once. <strong style="color:var(--text)">Real work adds one layer at a time.</strong></p>
+      </div>
+    </section>
+
+    <!-- 11. PROOF -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">11</div>
+        <h2>Proof</h2>
+      </div>
+      <div class="card highlight">
+        <p>Every completed piece of work should produce proof:</p>
+        <ul class="arrow-list" style="margin-top:14px">
+          <li>Project</li>
+          <li>Live website</li>
+          <li>Screenshots</li>
+          <li>Case study</li>
+          <li>GitHub</li>
+          <li>Portfolio</li>
+          <li>Content</li>
+        </ul>
+        <p style="margin-top:12px">This is much stronger than saying <em>"I know React."</em></p>
+        <p style="margin-top:8px">You can say: <strong style="color:var(--text)">"Here's what I built, why I built it this way, what problem I solved, and how it works."</strong></p>
+      </div>
+    </section>
+
+    <!-- 12. PORTFOLIO -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">12</div>
+        <h2>Portfolio</h2>
+      </div>
+      <div class="card">
+        <p>Your portfolio is your proof library. Keep it simple:</p>
+        <div class="tags" style="margin-top:12px">
+          <span class="tag">HOME</span>
+          <span class="tag cyan">WORK</span>
+          <span class="tag green">ABOUT</span>
+          <span class="tag orange">CONTACT</span>
+        </div>
+        <h3>Each project should show</h3>
+        <div class="tags">
+          <span class="tag">Context</span>
+          <span class="tag cyan">Problem</span>
+          <span class="tag green">Goal</span>
+          <span class="tag orange">Process</span>
+          <span class="tag pink">Design</span>
+          <span class="tag yellow">Development</span>
+          <span class="tag">Result</span>
+          <span class="tag cyan">Tech</span>
+          <span class="tag green">Live project</span>
+        </div>
+        <p style="margin-top:14px"><em>Don't make your portfolio the biggest project. Your work is the star.</em></p>
+      </div>
+    </section>
+
+    <!-- 13–15. CONTENT -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">13</div>
+        <h2>Content — Start from Day 1</h2>
+      </div>
+      <div class="card">
+        <p>Don't wait until Project #2. Content runs from the beginning.</p>
+        <p style="margin-top:8px">Your content isn't a separate career. <strong style="color:var(--text)">It's documentation of your career.</strong></p>
+        <ul class="arrow-list" style="margin-top:14px">
+          <li>WORK</li>
+          <li>DOCUMENT</li>
+          <li>PUBLISH</li>
+          <li>CONNECT</li>
+          <li>TRUST</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-num">14</div>
+        <h2>LinkedIn</h2>
+      </div>
+      <div class="card">
+        <p>Your primary professional platform. Post around:</p>
+        <div style="overflow-x:auto;margin-top:14px">
+          <table>
+            <thead>
+              <tr><th>Type</th><th>Focus</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong style="color:#a5b4fc">BUILD</strong></td><td>What I built</td></tr>
+              <tr><td><strong style="color:#67e8f9">THINK</strong></td><td>Why I made a particular decision</td></tr>
+              <tr><td><strong style="color:#6ee7b7">LEARN</strong></td><td>What a project taught me</td></tr>
+              <tr><td><strong style="color:#fdba74">IMPROVE</strong></td><td>Before → after</td></tr>
+              <tr><td><strong style="color:#f9a8d4">JOURNEY</strong></td><td>What you're learning while building</td></tr>
+              <tr><td><strong style="color:#fcd34d">FREELANCE</strong></td><td>Lessons from client/outreach experience</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:12px"><strong>Start:</strong> 2 posts/week · Consistency &gt; volume</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-num">15</div>
+        <h2>Instagram</h2>
+      </div>
+      <div class="card">
+        <p>Your visual platform. Post:</p>
+        <div class="tags" style="margin-top:12px">
+          <span class="tag">Website reveal</span>
+          <span class="tag cyan">UI animation</span>
+          <span class="tag green">Screen recording</span>
+          <span class="tag orange">Before / after</span>
+          <span class="tag pink">Carousel</span>
+          <span class="tag yellow">Design breakdown</span>
+          <span class="tag">Dev process</span>
+          <span class="tag cyan">Micro-interaction</span>
+        </div>
+        <p style="margin-top:14px"><strong>Start:</strong> 2–3 pieces/week</p>
+        <p style="margin-top:8px"><strong style="color:var(--text)">Positioning:</strong> Frontend developer building modern websites and showing the thinking behind them.</p>
+      </div>
+    </section>
+
+    <!-- 16. ONE PROJECT -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">16</div>
+        <h2>One Project → Many Results</h2>
+      </div>
+      <div class="card green">
+        <p>This is how you avoid burnout.</p>
+        <div class="flow-box" style="margin:16px 0">
+<pre style="color:#6ee7b7;font-size:0.8rem">
+             PROJECT
+                │
+       ┌────────┼────────┐
+       ↓        ↓        ↓
+   Portfolio  Content  Case Study
+       │        │        │
+       ↓        ↓        ↓
+      Jobs    Brand    Freelance
+                │
+            OPPORTUNITY
+</pre>
+        </div>
+        <p><strong style="color:var(--text)">One serious project can support your entire career system.</strong></p>
+      </div>
+    </section>
+
+    <!-- 17–19 -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">17</div>
+        <h2>Personal Brand</h2>
+      </div>
+      <div class="card">
+        <p>Content isn't the final goal. The goal is: <strong style="color:var(--text)">Become recognizable for a specific type of work.</strong></p>
+        <p style="margin-top:10px">Eventually people should associate you with:</p>
+        <p style="margin-top:8px;color:var(--accent-2);font-weight:600">Modern frontend + high-quality websites + thoughtful development.</p>
+        <ul class="arrow-list" style="margin-top:14px">
+          <li>Content</li>
+          <li>Visibility</li>
+          <li>Trust</li>
+          <li>Network</li>
+          <li>Opportunities</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-num">18</div>
+        <h2>Network / Trust</h2>
+      </div>
+      <div class="card">
+        <p>Networking isn't: <em>"Send 100 connection requests."</em></p>
+        <p style="margin-top:8px">It's:</p>
+        <ul class="arrow-list">
+          <li>Build</li>
+          <li>Share</li>
+          <li>Talk</li>
+          <li>Help</li>
+          <li>Connect</li>
+          <li>Stay visible</li>
+        </ul>
+        <h3>People to gradually add</h3>
+        <div class="tags">
+          <span class="tag">Founders</span>
+          <span class="tag cyan">Designers</span>
+          <span class="tag green">Developers</span>
+          <span class="tag orange">Recruiters</span>
+          <span class="tag pink">Agency owners</span>
+          <span class="tag yellow">Marketers</span>
+          <span class="tag">Freelancers</span>
+          <span class="tag cyan">Startup people</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-num">19</div>
+        <h2>Jobs + Clients</h2>
+      </div>
+      <div class="card highlight">
+        <p>Eventually your system creates two opportunity channels:</p>
+        <div class="flow-box" style="margin:16px 0">
+<pre style="color:#67e8f9;font-size:0.8rem">
+                    PROOF
+                      │
+             ┌────────┴────────┐
+             ↓                 ↓
+          VISIBILITY        OUTREACH
+             │                 │
+             ↓                 ↓
+          NETWORK          CONVERSATIONS
+             │                 │
+             └────────┬────────┘
+                      ↓
+              ┌───────┴───────┐
+              ↓               ↓
+             JOBS           CLIENTS
+</pre>
+        </div>
+        <p>You don't depend entirely on one.</p>
+      </div>
+    </section>
+
+    <!-- 20–22 -->
+    <section>
+      <div class="section-header">
+        <div class="section-num">20</div>
+        <h2>More Income</h2>
+      </div>
+      <div class="card">
+        <ul class="arrow-list">
+          <li>CURRENT JOB</li>
+          <li>BETTER JOB</li>
+          <li>FREELANCE</li>
+          <li>BETTER FREELANCE PROJECTS</li>
+          <li>HIGHER VALUE</li>
+          <li>HIGHER PRICING</li>
+          <li>MORE INCOME</li>
+        </ul>
+        <p style="margin-top:12px">Eventually you may choose: Job + Freelance → Specialist Freelance → Product / SaaS → Agency</p>
+        <p style="margin-top:8px"><em>But don't decide that today. Let experience tell you.</em></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-num">21</div>
+        <h2>More Experience</h2>
+      </div>
+      <div class="card">
+        <p>Every job and client adds a new layer:</p>
+        <div class="tags" style="margin-top:12px">
+          <span class="tag">Technical</span>
+          <span class="tag cyan">Business</span>
+          <span class="tag green">Design</span>
+          <span class="tag orange">Communication</span>
+          <span class="tag pink">Sales</span>
+          <span class="tag yellow">Project management</span>
+          <span class="tag">Problem solving</span>
+        </div>
+        <p style="margin-top:14px">This is why real work is so valuable.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-num">22</div>
+        <h2>Better You</h2>
+      </div>
+      <div class="card green">
+        <ul class="arrow-list">
+          <li>Better skill</li>
+          <li>Better work</li>
+          <li>Better proof</li>
+          <li>Better opportunities</li>
+          <li>Better income</li>
+          <li>Better experience</li>
+          <li>Better judgment</li>
+          <li>Better decisions</li>
+          <li><strong style="color:var(--green)">BETTER YOU</strong></li>
+        </ul>
+        <p style="margin-top:12px">And then the loop starts again.</p>
+      </div>
+    </section>
+
+    <!-- 60-DAY EXECUTION -->
+    <section>
+      <div class="section-header">
+        <div class="section-num" style="background:linear-gradient(135deg,#fb923c,#f472b6)">📅</div>
+        <h2>Your 60-Day Execution</h2>
+      </div>
+      <div class="weeks">
+        <div class="week-card">
+          <h4>WEEK 1</h4>
+          <ul>
+            <li>CV</li>
+            <li>LinkedIn</li>
+            <li>Portfolio foundation</li>
+            <li>Freelance offer</li>
+            <li>Job + Freelance tracker</li>
+            <li>Start Project #1</li>
+            <li>Start content</li>
+          </ul>
+          <p style="margin-top:10px;font-size:0.8rem;color:var(--orange)">No heavy outreach yet.</p>
+        </div>
+        <div class="week-card">
+          <h4>WEEK 2</h4>
+          <ul>
+            <li>Continue Project #1</li>
+            <li>10–15 job applications</li>
+            <li>10 freelance prospects</li>
+            <li>3–5 networking conversations</li>
+            <li>2 LinkedIn posts</li>
+            <li>2–3 Instagram pieces</li>
+            <li>Learn project problems</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <h4>WEEK 3</h4>
+          <ul>
+            <li>Continue building</li>
+            <li>Applications</li>
+            <li>Outreach</li>
+            <li>Follow-ups</li>
+            <li>Interview preparation</li>
+            <li>Content</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <h4>WEEK 4</h4>
+          <ul>
+            <li>Finish Project #1</li>
+            <li>Deploy</li>
+            <li>Case study</li>
+            <li>Portfolio update</li>
+            <li>Content</li>
+            <li>Continue job search + outreach</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <h4>WEEK 5</h4>
+          <ul>
+            <li>Start Project #2</li>
+            <li>Applications</li>
+            <li>Outreach</li>
+            <li>Discovery conversations</li>
+            <li>Content</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <h4>WEEK 6</h4>
+          <ul>
+            <li>Continue Project #2</li>
+            <li>15–20 prospects</li>
+            <li>Applications</li>
+            <li>Interviews</li>
+            <li>Proposals</li>
+            <li>Content</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <h4>WEEK 7</h4>
+          <ul>
+            <li>Finish Project #2</li>
+            <li>Case study</li>
+            <li>Portfolio polish</li>
+            <li>Interview prep</li>
+            <li>Freelance follow-ups</li>
+            <li>Content</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <h4>WEEK 8</h4>
+          <ul>
+            <li>Review results</li>
+            <li>Improve weak areas</li>
+            <li>Push applications + outreach</li>
+            <li>Interview</li>
+            <li>Close freelance opportunities</li>
+            <li>Evaluate next 60 days</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEEKLY FORMAT -->
+    <section>
+      <div class="section-header">
+        <div class="section-num" style="background:linear-gradient(135deg,#22d3ee,#6366f1)">🧩</div>
+        <h2>Your Weekly Life Format</h2>
+      </div>
+      <div class="card">
+        <p>You still have your job. So your life should <strong style="color:var(--orange)">NOT</strong> become 14 hours of work.</p>
+        <div class="schedule" style="margin-top:20px">
+          <div class="day-row"><span class="day">MON</span><span class="focus">Job + Applications</span></div>
+          <div class="day-row"><span class="day">TUE</span><span class="focus">Job + Project</span></div>
+          <div class="day-row"><span class="day">WED</span><span class="focus">Job + Interview Prep</span></div>
+          <div class="day-row"><span class="day">THU</span><span class="focus">Job + Freelance Outreach</span></div>
+          <div class="day-row"><span class="day">FRI</span><span class="focus">Job + Content + Follow-up</span></div>
+          <div class="day-row"><span class="day">SAT</span><span class="focus">3–4h Deep Work · Project / Freelance</span></div>
+          <div class="day-row"><span class="day">SUN</span><span class="focus">1–2h Review + Planning → Then REST</span></div>
+        </div>
+        <h3 style="margin-top:24px">Protect</h3>
+        <div class="tags">
+          <span class="tag green">Sleep</span>
+          <span class="tag cyan">Health</span>
+          <span class="tag">Family</span>
+          <span class="tag pink">Friends</span>
+          <span class="tag orange">Personal time</span>
+          <span class="tag yellow">Rest</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCOREBOARD -->
+    <section>
+      <div class="section-header">
+        <div class="section-num" style="background:linear-gradient(135deg,#a78bfa,#f472b6)">📊</div>
+        <h2>Your Weekly Scoreboard</h2>
+      </div>
+      <p style="margin-bottom:8px;color:var(--text-muted)">Don't measure how many tutorials you watched. Measure:</p>
+      <div class="scoreboard">
+        <div class="score-item">
+          <div class="label">Job</div>
+          <div class="value">10–15 apps · 3–5 convos · 2 prep sessions</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Freelance</div>
+          <div class="value">10–20 prospects · 5–10 follow-ups</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Project</div>
+          <div class="value">1 meaningful improvement</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Content</div>
+          <div class="value">2 LinkedIn · 2–3 Instagram</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Learning</div>
+          <div class="value">Problems solved</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Life</div>
+          <div class="value">Health + rest + relationships</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 QUESTIONS -->
+    <section>
+      <div class="section-header">
+        <div class="section-num" style="background:linear-gradient(135deg,#fbbf24,#fb923c)">🔥</div>
+        <h2>The Rule That Connects Everything</h2>
+      </div>
+      <div class="card">
+        <p>Whenever you're confused, ask these 7 questions:</p>
+        <ol class="questions" style="margin-top:20px">
+          <li>What am I trying to achieve?</li>
+          <li>What am I building?</li>
+          <li>What problem am I solving?</li>
+          <li>What don't I know?</li>
+          <li>What do I need to learn?</li>
+          <li>How can I prove what I learned?</li>
+          <li>How can I use that proof?</li>
+        </ol>
+        <p style="margin-top:20px;text-align:center;color:var(--text-muted)">And the answer usually becomes:</p>
+        <p style="text-align:center;margin-top:10px;font-weight:600;color:var(--accent-2)">
+          Learn → Build → Portfolio → Content → Job / Client
+        </p>
+      </div>
+    </section>
+
+    <!-- MASTER LOOP -->
+    <section>
+      <div class="section-header">
+        <div class="section-num" style="background:linear-gradient(135deg,#34d399,#22d3ee)">∞</div>
+        <h2>Your Master Operating Loop</h2>
+      </div>
+      <div class="flow-box">
+<pre style="color:#c4b5fd">
+                         YOU
+                          │
+                          ▼
+                    REAL WORK
+                          │
+                          ▼
+                      PROBLEM
+                          │
+                          ▼
+                     LEARN WHAT
+                     IS REQUIRED
+                          │
+                          ▼
+                       APPLY
+                          │
+                          ▼
+                       IMPROVE
+                          │
+                          ▼
+                        SHIP
+                          │
+                          ▼
+                        PROOF
+                          │
+             ┌────────────┴────────────┐
+             ▼                         ▼
+         PORTFOLIO                  CONTENT
+             │                         │
+             │                  ┌──────┴──────┐
+             │                  ▼             ▼
+             │              LINKEDIN      INSTAGRAM
+             │                  │             │
+             └──────────────────┴─────────────┘
+                                │
+                                ▼
+                         PERSONAL BRAND
+                                │
+                                ▼
+                         NETWORK / TRUST
+                                │
+                    ┌───────────┴───────────┐
+                    ▼                       ▼
+                  JOBS                  CLIENTS
+                    │                       │
+                    └───────────┬───────────┘
+                                ▼
+                           MORE INCOME
+                                │
+                                ▼
+                         MORE EXPERIENCE
+                                │
+                                ▼
+                          BETTER SKILL
+                                │
+                                ▼
+                           BETTER YOU
+                                │
+                                ▼
+                          NEXT CHALLENGE
+                                │
+                                └──────────────↺
+</pre>
+      </div>
+    </section>
+
+    <!-- FINAL RULE -->
+    <div class="rule-box">
+      <p>Your rule for this entire phase</p>
+      <p class="sub" style="font-size:1.25rem;font-weight:700;color:var(--text);margin:12px 0">
+        Don't prepare forever. Enter the loop.
+      </p>
+      <div class="chain">
+        Build → face problems → learn → improve → ship → show → apply → outreach → talk → deliver → earn → review → improve.
+      </div>
+      <p class="sub" style="margin-top:20px">
+        That is your career system for the next 60–90 days,<br />
+        while still keeping <strong style="color:var(--accent-2)">one life</strong> rather than five separate lives.
+      </p>
+    </div>
+
+    <footer class="footer">
+      <p>Made for your next level · <strong>Enter the loop.</strong></p>
+    </footer>
+
+  </div>
+</body>
+</html>
