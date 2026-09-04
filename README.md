@@ -1,43 +1,49 @@
 # Cinematic Freelance Developer Portfolio
-## Final Product & Technical Specification
+## Final Product, Design & Technical Specification — v2
 
-**Project Type:** High-end freelance developer portfolio  
+**Project Type:** Premium freelance developer portfolio  
 **Primary Goal:** Convert visitors into high-value freelance clients  
 **Design Direction:** Cinematic SaaS / Creative Developer  
 **Reference Style:** Heron AI-inspired interaction and visual storytelling  
 **Framework:** Next.js App Router  
+**Language:** TypeScript  
+**Styling:** Tailwind CSS  
+**UI Components:** shadcn/ui  
 **Animation:** GSAP + ScrollTrigger  
 **Smooth Scrolling:** Lenis  
-**UI:** shadcn/ui  
-**Styling:** Tailwind CSS  
-**Language:** TypeScript
 
 ---
 
 # 1. Project Vision
 
-The portfolio should position the developer as a **high-end frontend engineer and creative web developer**, rather than looking like a conventional developer résumé.
+Build a premium freelance portfolio that feels like a digital product rather than a traditional developer résumé.
 
-The experience should communicate:
+The website should communicate:
 
-- Technical expertise
+- Frontend engineering expertise
 - Strong visual taste
-- Modern frontend development
+- Modern web development
 - Animation expertise
 - Conversion-focused thinking
-- Ability to build production-ready SaaS and business websites
+- Production-ready development
+- Professional freelance positioning
 
-The website should feel like a **premium digital product**, not a collection of static portfolio pages.
+### Core Experience
 
-> **Minimal + cinematic + technical + premium + interactive**
+> **Minimal + cinematic + technical + premium + interactive + fast**
+
+Animation should support the content, not overpower it.
 
 ---
 
 # 2. Website Architecture
 
+The portfolio contains five primary pages:
+
 ```text
 /
 ├── Home
+├── About
 ├── Work
 ├── Services
 └── Contact
@@ -45,26 +51,65 @@ The website should feel like a **premium digital product**, not a collection of 
 
 | Page | Purpose | Main Experience |
 |---|---|---|
-| Home | Introduce positioning | Cinematic storytelling |
+| Home | Capture attention and position the developer | Cinematic storytelling |
+| About | Build personal authority and trust | Personal story + approach |
 | Work | Demonstrate capability | Bento project gallery |
-| Services | Explain value | Services + process |
+| Services | Explain value and offerings | Services + process |
 | Contact | Generate leads | Minimal conversion form |
 
 ---
 
-# 3. Home Page — The Narrative
+# 3. Global Navigation
 
-The Home page is the most important page.
+Desktop:
 
-Its purpose is not simply to say:
+```text
+CHINMAYA®
+
+About
+Work
+Services
+Contact
+
+[Let's Talk →]
+```
+
+Mobile:
+
+```text
+CHINMAYA®
+
+                    MENU
+```
+
+The mobile menu can use a full-screen animated overlay.
+
+Navigation should remain minimal and persistent without taking excessive screen space.
+
+---
+
+# 4. Home Page — The Narrative
+
+The Home page is the primary landing experience.
+
+Its purpose is to immediately communicate:
+
+1. Who you are
+2. What you build
+3. Who you build for
+4. Why clients should care
+
+Avoid generic messaging such as:
 
 > "Hi, I'm a frontend developer."
 
-Instead, immediately communicate:
+Instead, lead with value and capability.
 
-> **What you build, who you build it for, and why it matters.**
+---
 
-## Hero
+# 5. Home Hero
+
+Recommended direction:
 
 ```text
 I BUILD
@@ -97,9 +142,9 @@ Let's Work Together →
 
 ---
 
-# 4. Cinematic Hero Animation
+# 6. Cinematic Hero Animation
 
-The hero should use GSAP for:
+Use GSAP for:
 
 - Text reveal
 - Character/word animation
@@ -107,8 +152,9 @@ The hero should use GSAP for:
 - Scale transitions
 - Scroll-linked movement
 - Image masking
+- Subtle parallax
 
-### Recommended sequence
+### Recommended Sequence
 
 ```text
 Page Load
@@ -126,13 +172,17 @@ User scrolls
 Hero transitions into next section
 ```
 
-Animations should feel controlled and intentional. Avoid excessive animation during initial page load.
+Initial-load animation should be fast and controlled.
+
+Do not delay the user's ability to understand the page.
 
 ---
 
-# 5. Featured Project Reveal
+# 7. Featured Project Reveal
 
-The Home page should showcase the strongest project using a cinematic image reveal.
+Show the strongest project directly on the Home page.
+
+Concept:
 
 ```text
 Project Image
@@ -163,22 +213,26 @@ useGSAP(() => {
 });
 ```
 
-The project should include:
+Project information:
 
-- Project name
-- Short description
-- Industry
-- Technology
-- Result/impact
-- View project CTA
+```text
+Project Name
+Industry
+Short Description
+Technology
+Result / Impact
+View Project →
+```
+
+Only publish real and verifiable project results.
 
 ---
 
-# 6. Social Proof / Positioning
+# 8. Home — Social Proof
 
-Introduce credibility after the hero and featured project.
+After the featured project, introduce credibility.
 
-Possible content:
+Example:
 
 ```text
 2+ Years Experience
@@ -191,15 +245,275 @@ UI/UX
 Performance
 ```
 
-If real client metrics are available, prioritize them over generic statements.
+If verified metrics are available, use them instead of generic claims.
 
-Only use verified numbers.
+Example:
+
+```text
+5K+
+Users Supported
+
+XX+
+Projects Delivered
+
+XX%
+Performance Improvement
+```
+
+Never invent client metrics.
 
 ---
 
-# 7. Work Page — The Gallery
+# 9. Home — Selected Services
 
-The Work page should function as a visual case-study gallery.
+A short services preview can appear near the end of the Home page.
+
+Example:
+
+```text
+SaaS Websites
+Landing Pages
+Interactive Websites
+Frontend Development
+```
+
+CTA:
+
+```text
+Explore Services →
+```
+
+This connects the Home page to the Services page.
+
+---
+
+# 10. Home — Final CTA
+
+End the Home page with a strong conversion section.
+
+```text
+HAVE A PROJECT
+IN MIND?
+
+Let's build something
+worth remembering.
+
+[Let's Work Together →]
+```
+
+---
+
+# 11. About Page — Personal Authority
+
+The About page exists to answer:
+
+> **Who are you, how do you work, and why should a client trust you?**
+
+The Work page demonstrates capability.
+
+The About page demonstrates the person behind the work.
+
+---
+
+# 12. About Hero
+
+Recommended direction:
+
+```text
+ABOUT
+
+I'M CHINMAYA —
+A FRONTEND DEVELOPER
+BUILDING MODERN
+DIGITAL EXPERIENCES.
+```
+
+Supporting copy:
+
+```text
+I build fast, thoughtful and visually distinctive
+web experiences for startups, SaaS companies
+and modern businesses.
+```
+
+Keep the introduction concise.
+
+The visitor should understand your positioning within a few seconds.
+
+---
+
+# 13. About — Personal Story
+
+Use a short personal story rather than a long résumé.
+
+Suggested structure:
+
+```text
+I started with a curiosity for how websites work
+and gradually turned that curiosity into a focus
+on frontend engineering, interaction design and
+modern digital experiences.
+
+Today, I combine development, design thinking and
+animation to create websites that are not only
+beautiful, but useful, fast and conversion-focused.
+```
+
+Keep the final copy authentic to your actual experience.
+
+---
+
+# 14. About — Experience
+
+Create a simple timeline or experience section.
+
+Example:
+
+```text
+EXPERIENCE
+
+Frontend Developer
+2024 — Present
+
+Working on modern web applications,
+business platforms and digital products.
+
+Freelance Developer
+Ongoing
+
+Building websites and landing pages
+for businesses and startups.
+```
+
+Use only accurate employment and freelance information.
+
+---
+
+# 15. About — Philosophy
+
+Use three or four principles.
+
+```text
+01 — CLARITY
+
+Good interfaces should make
+complex things feel simple.
+
+02 — PERFORMANCE
+
+A beautiful website should
+also be fast.
+
+03 — DETAIL
+
+Small interaction and spacing
+decisions create premium experiences.
+
+04 — PURPOSE
+
+Animation should have a reason.
+It should guide attention and improve UX.
+```
+
+---
+
+# 16. About — My Approach
+
+Use the same process language as the Services page.
+
+```text
+01 — UNDERSTAND
+
+Understand the business,
+audience and objectives.
+
+        ↓
+
+02 — DESIGN
+
+Create a clear visual
+and interaction direction.
+
+        ↓
+
+03 — BUILD
+
+Develop a scalable,
+high-performance experience.
+
+        ↓
+
+04 — OPTIMIZE
+
+Test, refine and improve
+performance and conversion.
+```
+
+---
+
+# 17. About — Skills
+
+Avoid presenting skills as a giant list.
+
+Group them by purpose.
+
+### Frontend
+
+```text
+Next.js
+React
+TypeScript
+JavaScript
+HTML
+CSS
+Tailwind CSS
+```
+
+### Motion & Interaction
+
+```text
+GSAP
+ScrollTrigger
+Lenis
+Framer Motion
+Three.js
+```
+
+### Tools
+
+```text
+Git
+GitHub
+Figma
+Vercel
+VS Code
+```
+
+Only list technologies that you can confidently discuss with a client.
+
+---
+
+# 18. About — Personal CTA
+
+End the About page with:
+
+```text
+LOOKING FOR A
+DEVELOPER?
+
+Let's talk about your
+next digital experience.
+
+[Start a Conversation →]
+```
+
+---
+
+# 19. Work Page — The Gallery
+
+The Work page should be a visual case-study gallery.
+
+Primary layout:
 
 ## Bento Grid
 
@@ -221,7 +535,7 @@ The Work page should function as a visual case-study gallery.
 └──────────────────────────────┘
 ```
 
-Each card should contain:
+Each project card contains:
 
 - Project image
 - Project title
@@ -229,17 +543,18 @@ Each card should contain:
 - Technology
 - Short description
 - Hover interaction
+- Case-study link
 
 ---
 
-# 8. Project Card Interaction
+# 20. Project Card Interaction
 
 Use GSAP + ScrollTrigger for viewport-based animations.
 
 ```text
 Card enters viewport
        ↓
-Image scales from 0.95 → 1
+Image scales 0.95 → 1
        ↓
 Opacity 0 → 1
        ↓
@@ -260,13 +575,13 @@ Cursor interaction activates
 Project metadata appears
 ```
 
-Keep the movement subtle.
+Keep the interaction subtle.
 
 ---
 
-# 9. Project Case Study Structure
+# 21. Project Case Study Structure
 
-Each project should eventually support a detailed case study.
+Each project can have a detailed case study.
 
 ```text
 Project Hero
@@ -288,63 +603,99 @@ Results
 Final Experience
 ```
 
-Focus on **thinking and outcomes**, not simply screenshots.
+Focus on:
+
+- Problem
+- Decisions
+- Process
+- Technical implementation
+- Outcome
+
+Do not make the case study a screenshot gallery only.
 
 ---
 
-# 10. Services Page — The Value
+# 22. Services Page — The Value
 
 The Services page should answer:
 
-> "Why should I hire you?"
+> **Why should I hire you?**
 
-Avoid presenting a huge list of technologies. Sell outcomes.
-
-## Services
-
-### 01 — SaaS Websites
-
-For:
-
-- SaaS companies
-- Startups
-- Technology businesses
-- AI products
-
-### 02 — Landing Pages
-
-Focused on:
-
-- Clear messaging
-- Strong visual hierarchy
-- CTA optimization
-- Performance
-
-### 03 — Interactive Websites
-
-Using:
-
-- GSAP
-- ScrollTrigger
-- WebGL / Three.js when appropriate
-- Smooth scrolling
-- Advanced interactions
-
-### 04 — Frontend Development
-
-Using:
-
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Modern component systems
+Sell outcomes rather than a list of technologies.
 
 ---
 
-# 11. Development Process
+# 23. Service 01 — SaaS Websites
 
-Use a simple three-stage process.
+Build premium websites for:
+
+- SaaS companies
+- Startups
+- AI products
+- Technology companies
+
+Focus:
+
+```text
+Clear positioning
+Strong UX
+Performance
+Responsive design
+Conversion
+```
+
+---
+
+# 24. Service 02 — Landing Pages
+
+Build conversion-focused landing pages around:
+
+- Clear messaging
+- Visual hierarchy
+- CTA optimization
+- Performance
+- Responsive design
+
+---
+
+# 25. Service 03 — Interactive Websites
+
+For brands that need a more immersive experience.
+
+Possible technologies:
+
+```text
+GSAP
+ScrollTrigger
+Lenis
+Three.js
+WebGL
+Framer Motion
+```
+
+Use advanced technology only when it improves the experience.
+
+---
+
+# 26. Service 04 — Frontend Development
+
+Production-ready frontend development using:
+
+```text
+Next.js
+React
+TypeScript
+Tailwind CSS
+shadcn/ui
+REST APIs
+Modern component architecture
+```
+
+---
+
+# 27. Development Process
+
+Use a simple four-step process:
 
 ```text
 01 — DISCOVERY
@@ -353,22 +704,27 @@ audience and objective.
 
         ↓
 
-02 — BUILD
-Design and develop the
-experience.
+02 — DESIGN
+Create the visual and
+interaction direction.
 
         ↓
 
-03 — LAUNCH
-Optimize, test and
-deploy the final product.
+03 — BUILD
+Develop the production-ready
+website.
+
+        ↓
+
+04 — LAUNCH
+Test, optimize and deploy.
 ```
 
 ---
 
-# 12. Services UI
+# 28. Services UI
 
-Use a clean grid or shadcn/ui components.
+Use a clean grid.
 
 ```text
 ┌─────────────────────────────┐
@@ -392,9 +748,11 @@ Use a clean grid or shadcn/ui components.
 └─────────────────────────────┘
 ```
 
+shadcn/ui Accordion can be used if additional service details are required.
+
 ---
 
-# 13. Tech Stack Marquee
+# 29. Tech Stack Marquee
 
 Introduce a subtle infinite horizontal marquee.
 
@@ -405,23 +763,25 @@ TYPESCRIPT
 GSAP
 TAILWIND
 THREE.JS
-FRAMER
+FRAMER MOTION
 NODE.JS
 ```
 
-The marquee should move slowly and continuously.
+The marquee should be slow and visually quiet.
 
-Do not make it distracting.
+It should not compete with the main content.
 
 ---
 
-# 14. Contact Page — The Conversion
+# 30. Contact Page — Conversion
 
 The Contact page should be intentionally minimal.
 
-> **Make contacting the developer feel effortless.**
+Primary goal:
 
-Suggested headline:
+> **Make contacting the developer effortless.**
+
+Hero:
 
 ```text
 HAVE A PROJECT
@@ -436,7 +796,11 @@ what you're trying to achieve,
 and where you're currently stuck.
 ```
 
-Form fields:
+---
+
+# 31. Contact Form
+
+Fields:
 
 ```text
 Name
@@ -453,10 +817,6 @@ CTA:
 Start a Conversation →
 ```
 
----
-
-# 15. Contact Form
-
 Recommended implementation:
 
 ```text
@@ -469,7 +829,9 @@ Server Action / API
 Resend
 ```
 
-Validation:
+---
+
+# 32. Contact Validation
 
 ```text
 Name       → Required
@@ -477,21 +839,29 @@ Email      → Valid email
 Project    → Required
 Message    → Required
 Budget     → Optional
+Company    → Optional
 ```
 
-Success state:
+Success:
 
 ```text
 Submitting...
      ↓
 Success
      ↓
-"Thanks — I'll get back to you shortly."
+Thanks — I'll get back to you shortly.
+```
+
+Error:
+
+```text
+Something went wrong.
+Please try again.
 ```
 
 ---
 
-# 16. Visual Design System
+# 33. Visual Design System
 
 ## Background
 
@@ -517,13 +887,17 @@ rgba(255,255,255,0.6)
 rgba(255,255,255,0.1)
 ```
 
+Use restrained visual styling.
+
+The black canvas, typography and spacing should do most of the visual work.
+
 ---
 
-# 17. Typography
+# 34. Typography
 
-Typography should be large and fluid.
+Use fluid typography.
 
-Use:
+Recommended:
 
 ```css
 font-size: clamp();
@@ -541,17 +915,11 @@ Example:
 }
 ```
 
-The design should remain visually consistent across:
-
-- Mobile
-- Tablet
-- Laptop
-- Desktop
-- Large displays
+Avoid depending entirely on fixed pixel values.
 
 ---
 
-# 18. Responsive Strategy
+# 35. Responsive Strategy
 
 Desktop and mobile should not simply be scaled versions of each other.
 
@@ -574,7 +942,8 @@ Use:
 - Single-column layouts
 - Reduced typography
 - Touch-friendly buttons
-- No heavy cursor interactions
+- No heavy cursor effects
+- Reduced visual complexity
 
 Example:
 
@@ -582,13 +951,11 @@ Example:
 font-size: clamp(2.5rem, 8vw, 9rem);
 ```
 
-Avoid hardcoded viewport assumptions.
-
 ---
 
-# 19. Smooth Scrolling
+# 36. Smooth Scrolling
 
-Use Lenis for the premium scrolling experience.
+Use Lenis for premium scrolling.
 
 Architecture:
 
@@ -604,15 +971,15 @@ Pages
 
 Lenis and GSAP ScrollTrigger must remain synchronized.
 
-Use the current Lenis React integration rather than relying on outdated package examples.
+Use the current supported Lenis React integration rather than copying outdated package examples.
 
 ---
 
-# 20. GSAP Architecture
+# 37. GSAP Architecture
 
-Animations should not be scattered randomly across components.
+Do not scatter animation logic randomly throughout the application.
 
-Recommended structure:
+Recommended:
 
 ```text
 src/
@@ -624,7 +991,7 @@ src/
 │   └── cursor.ts
 ```
 
-Reusable animation utilities:
+Reusable hooks/utilities:
 
 ```text
 useHeroAnimation()
@@ -635,9 +1002,11 @@ useMarqueeAnimation()
 
 ---
 
-# 21. Custom Cursor
+# 38. Custom Cursor
 
-Desktop can include a custom cursor/spotlight.
+Desktop can include a custom cursor or spotlight.
+
+Architecture:
 
 ```text
 Mouse Position
@@ -673,11 +1042,11 @@ Link hover:
 ↗
 ```
 
-Disable or simplify the custom cursor on mobile.
+Disable or simplify it on mobile.
 
 ---
 
-# 22. Performance Requirements
+# 39. Performance Requirements
 
 High-end animation must not compromise performance.
 
@@ -689,19 +1058,19 @@ Use:
 next/image
 ```
 
-for portfolio images wherever appropriate.
+where appropriate.
 
 Use:
 
-- WebP/AVIF
+- WebP / AVIF
 - Correct dimensions
 - Responsive image sizes
 - Lazy loading below the fold
-- Priority loading for LCP imagery
+- Priority loading for important LCP imagery
 
 ---
 
-# 23. Animation Performance
+# 40. Animation Performance
 
 Prefer animating:
 
@@ -711,7 +1080,7 @@ opacity
 clip-path
 ```
 
-Avoid repeatedly animating layout properties:
+Avoid repeatedly animating:
 
 ```text
 width
@@ -724,16 +1093,15 @@ padding
 
 Also:
 
-- Kill unnecessary ScrollTriggers
 - Scope GSAP contexts
+- Clean up animations
+- Avoid unnecessary ScrollTriggers
 - Avoid excessive simultaneous animations
 - Respect `prefers-reduced-motion`
 
 ---
 
-# 24. Accessibility
-
-The cinematic experience must remain accessible.
+# 41. Accessibility
 
 Implement:
 
@@ -758,9 +1126,9 @@ Example:
 
 ---
 
-# 25. SEO
+# 42. SEO
 
-Every page should have proper metadata:
+Every page should have:
 
 ```text
 Title
@@ -778,11 +1146,11 @@ ProfessionalService
 WebSite
 ```
 
-Only use schema that accurately represents the page.
+Structured data must accurately represent the content.
 
 ---
 
-# 26. Recommended Metadata
+# 43. Recommended Metadata
 
 ## Home
 
@@ -794,6 +1162,13 @@ Description:
 Frontend developer building high-performance,
 interactive websites and digital experiences
 with Next.js, React, TypeScript and GSAP.
+```
+
+## About
+
+```text
+Title:
+About Chinmaya Das — Frontend Developer
 ```
 
 ## Work
@@ -819,7 +1194,7 @@ Let's Work Together — Chinmaya Das
 
 ---
 
-# 27. Technical SEO Checklist
+# 44. Technical SEO Checklist
 
 ```text
 ✓ sitemap.xml
@@ -837,13 +1212,15 @@ Let's Work Together — Chinmaya Das
 
 ---
 
-# 28. Recommended Project Structure
+# 45. Recommended Project Structure
 
 ```text
 src/
 │
 ├── app/
 │   ├── page.tsx
+│   ├── about/
+│   │   └── page.tsx
 │   ├── work/
 │   │   └── page.tsx
 │   ├── services/
@@ -864,6 +1241,12 @@ src/
 │   ├── hero/
 │   │   ├── Hero.tsx
 │   │   └── HeroAnimation.tsx
+│   │
+│   ├── about/
+│   │   ├── AboutHero.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Philosophy.tsx
+│   │   └── Skills.tsx
 │   │
 │   ├── projects/
 │   │   ├── ProjectCard.tsx
@@ -889,7 +1272,8 @@ src/
 ├── data/
 │   ├── projects.ts
 │   ├── services.ts
-│   └── technologies.ts
+│   ├── technologies.ts
+│   └── experience.ts
 │
 ├── lib/
 │   ├── utils.ts
@@ -901,55 +1285,50 @@ src/
 
 ---
 
-# 29. Component Philosophy
+# 46. Component Philosophy
 
 Keep components small and reusable.
 
-Avoid creating one massive `page.tsx`.
+Avoid one massive `page.tsx`.
 
-Instead:
-
-```text
-Hero
-Projects
-Services
-Process
-TechStack
-ContactCTA
-Footer
-```
-
-Each section should own its layout and animation logic.
-
----
-
-# 30. Navigation
-
-The navigation should remain minimal.
+Recommended section composition:
 
 ```text
-CHINMAYA®
+Home
+├── Hero
+├── FeaturedProject
+├── SocialProof
+├── SelectedServices
+└── ContactCTA
+
+About
+├── AboutHero
+├── Story
+├── Experience
+├── Philosophy
+├── Skills
+└── ContactCTA
 
 Work
+├── WorkHero
+├── ProjectGrid
+└── ProjectCTA
+
 Services
+├── ServicesHero
+├── ServiceGrid
+├── Process
+├── TechStack
+└── ContactCTA
+
 Contact
-
-[Let's Talk →]
+├── ContactHero
+└── ContactForm
 ```
-
-Mobile:
-
-```text
-CHINMAYA®
-
-          MENU
-```
-
-The mobile menu can use a full-screen animated overlay.
 
 ---
 
-# 31. Footer
+# 47. Footer
 
 Minimal footer:
 
@@ -957,6 +1336,7 @@ Minimal footer:
 CHINMAYA DAS
 Frontend Developer / Creative Developer
 
+About
 Work
 Services
 Contact
@@ -972,12 +1352,12 @@ Keep the footer visually quiet.
 
 ---
 
-# 32. Overall User Journey
+# 48. Overall User Journey
 
 ```text
 ATTENTION
    ↓
-Hero
+Home Hero
    ↓
 CURIOSITY
    ↓
@@ -985,7 +1365,11 @@ Featured Work
    ↓
 TRUST
    ↓
-Projects + Experience
+About + Experience
+   ↓
+PROOF
+   ↓
+Work / Case Studies
    ↓
 VALUE
    ↓
@@ -1000,43 +1384,49 @@ CONVERSION
 Contact Form
 ```
 
-This is more important than simply adding more animations.
+The user should never feel lost.
+
+Every page should naturally lead toward the next step.
 
 ---
 
-# 33. Design Principles
+# 49. Design Principles
 
-### Rule 1 — Content First
+## Rule 1 — Content First
 
 Animation should enhance the message.
 
-### Rule 2 — Less Is More
+## Rule 2 — Less Is More
 
 Do not animate everything.
 
-### Rule 3 — Create Hierarchy
+## Rule 3 — Create Hierarchy
 
 Large typography should establish visual hierarchy.
 
-### Rule 4 — Show Real Work
+## Rule 4 — Show Real Work
 
 Actual projects are stronger than decorative mockups.
 
-### Rule 5 — Sell Outcomes
+## Rule 5 — Sell Outcomes
 
 Talk about business value, not only technology.
 
-### Rule 6 — Performance Is a Feature
+## Rule 6 — Performance Is a Feature
 
-A beautiful site that loads slowly is not a premium website.
+A beautiful website that loads slowly is not a premium website.
 
-### Rule 7 — Mobile Is First-Class
+## Rule 7 — Mobile Is First-Class
 
 Do not treat mobile as an afterthought.
 
+## Rule 8 — Authenticity
+
+The About page and case studies must represent real experience.
+
 ---
 
-# 34. Final Technology Stack
+# 50. Final Technology Stack
 
 ```text
 Framework
@@ -1080,7 +1470,7 @@ Deployment
 
 ---
 
-# 35. MVP Development Order
+# 51. MVP Development Order
 
 ## Phase 1 — Foundation
 
@@ -1102,11 +1492,23 @@ Hero
 Hero animation
 Featured project
 Scroll reveal
-Tech stack
+Social proof
+Selected services
 CTA
 ```
 
-## Phase 3 — Work
+## Phase 3 — About
+
+```text
+About hero
+Personal story
+Experience
+Philosophy
+Skills
+CTA
+```
+
+## Phase 4 — Work
 
 ```text
 Bento grid
@@ -1116,7 +1518,7 @@ Scroll animations
 Case study structure
 ```
 
-## Phase 4 — Services
+## Phase 5 — Services
 
 ```text
 Services
@@ -1125,7 +1527,7 @@ Technology
 CTA
 ```
 
-## Phase 5 — Contact
+## Phase 6 — Contact
 
 ```text
 Contact page
@@ -1136,7 +1538,7 @@ Success state
 Error state
 ```
 
-## Phase 6 — Polish
+## Phase 7 — Polish
 
 ```text
 SEO
@@ -1152,15 +1554,16 @@ Loading states
 
 ---
 
-# 36. Definition of Done
+# 52. Definition of Done
 
 ```text
-✓ All 4 pages work
+✓ All 5 pages work
 ✓ Navigation works
 ✓ Mobile navigation works
 ✓ Lenis scrolling works
 ✓ GSAP animations are smooth
 ✓ Reduced motion is supported
+✓ About page is complete
 ✓ Project gallery is responsive
 ✓ Images are optimized
 ✓ Contact form works
@@ -1181,13 +1584,13 @@ Loading states
 
 ---
 
-# 37. Final Positioning
+# 53. Final Positioning
 
-The portfolio should not position the developer as:
+Do not position yourself as:
 
 > "Someone who knows React and Next.js."
 
-It should position the developer as:
+Position yourself as:
 
 > **A frontend engineer who builds high-performance, visually distinctive digital experiences that help modern businesses launch, communicate and convert.**
 
@@ -1195,17 +1598,19 @@ The technology proves capability.
 
 The design demonstrates taste.
 
+The About page demonstrates personality and trust.
+
 The case studies demonstrate experience.
+
+The services demonstrate value.
 
 The conversion system demonstrates business understanding.
 
 ---
 
-# 38. Final Direction
+# 54. Final Creative Direction
 
-Build the website as a **premium freelance product**, not a résumé website.
-
-The ideal experience is:
+The website should feel like a premium freelance product.
 
 ```text
 Minimal
@@ -1218,6 +1623,8 @@ Interactive
     +
 Accessible
     +
+Authentic
+    +
 Conversion-focused
 ```
 
@@ -1226,3 +1633,55 @@ The goal is not to impress developers with complicated animations.
 The goal is to make a potential client think:
 
 > **"This person can build the kind of website I want my company to have."**
+
+---
+
+# 55. Final Page Map
+
+```text
+HOME
+│
+├── Hero
+├── Featured Work
+├── Social Proof
+├── Selected Services
+└── CTA
+
+ABOUT
+│
+├── About Hero
+├── Personal Story
+├── Experience
+├── Philosophy
+├── Skills
+└── CTA
+
+WORK
+│
+├── Work Hero
+├── Bento Project Grid
+├── Case Studies
+└── CTA
+
+SERVICES
+│
+├── Services Hero
+├── Service Grid
+├── Process
+├── Tech Stack
+└── CTA
+
+CONTACT
+│
+├── Contact Hero
+├── Contact Form
+└── Success / Error State
+```
+
+---
+
+# Final Principle
+
+**Build the portfolio like you would build a product for a premium client.**
+
+The portfolio itself should become the strongest proof of your ability.
